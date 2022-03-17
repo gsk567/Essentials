@@ -8,8 +8,8 @@
         <Company>gsk567</Company>
         <Authors>Georgi Karagogov</Authors>
         <Product>Essentials</Product>
-        <PackageProjectUrl></PackageProjectUrl>
-        <RepositoryUrl></RepositoryUrl>
+        <PackageProjectUrl>https://github.com/gsk567/Essentials</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/gsk567/Essentials</RepositoryUrl>
         <Description>Essentials and utilities that introduce custom helpers and wrappers that improve the development process.</Description>
         <PackageTags>essentials, utilities, helpers</PackageTags>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
