@@ -20,6 +20,12 @@
         <CodeAnalysisRuleSet>../../Essentials.ruleset</CodeAnalysisRuleSet>
     </PropertyGroup>
 
+    <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <VsxmdAutoDeleteXml>True</VsxmdAutoDeleteXml>
+        <DocumentationMarkdown>$(MSBuildProjectDirectory)\..\..\README.md</DocumentationMarkdown>
+    </PropertyGroup>
+    
     <ItemGroup>
         <None Include="..\..\LICENSE">
             <Pack>True</Pack>
@@ -40,6 +46,10 @@
         <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Vsxmd" Version="1.4.5">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
     </ItemGroup>
     
