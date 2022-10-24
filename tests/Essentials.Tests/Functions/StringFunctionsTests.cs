@@ -63,5 +63,26 @@ namespace Essentials.Tests.Functions
             string resultOutput = StringFunctions.ClearMultipleIntervals(input);
             Assert.Equal(expectedOutput, resultOutput);
         }
+
+        [InlineData("ivan", "ivan")]
+        [InlineData("Иван", "ivan")]
+        [InlineData("иваn", "ivan")]
+        [InlineData("Борис си купи колело", "boris-si-kupi-kolelo")]
+        [InlineData("Борис си купи-колело", "boris-si-kupi-kolelo")]
+        [InlineData("Борис      си     купи      колело", "boris-si-kupi-kolelo")]
+        [InlineData("ThisIsSomeVeryLongText", "thisissomeverylongtext")]
+        [InlineData("This Is Some Very Long Text", "this-is-some-very-long-text")]
+        [InlineData("This Is       Some Very      Long Text", "this-is-some-very-long-text")]
+        [InlineData("Apple iPhone 13, 128GB, Blue - Unlocked (Renewed)", "apple-iphone-13-128gb-blue-unlocked-renewed")]
+        [InlineData("", "")]
+        [InlineData("     ", "")]
+        [InlineData(" ", "")]
+        [InlineData(null, "")]
+        [Theory]
+        public void Slugify_OnEnteringValue_ShouldReturnExpectedResult(string input, string expectedOutput)
+        {
+            string resultOutput = StringFunctions.Slugify(input);
+            Assert.Equal(expectedOutput, resultOutput);
+        }
     }
 }

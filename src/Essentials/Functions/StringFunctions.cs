@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using Essentials.Internals;
 
 namespace Essentials.Functions
 {
@@ -116,6 +119,47 @@ namespace Essentials.Functions
 
                 return result + next;
             });
+        }
+
+        /// <summary>
+        /// Build slug from the specified string.
+        /// Inspired by https://github.com/simov/slugify .
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string Slugify(string value)
+        {
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                return string.Empty;
+            }
+
+            var replacement = '-';
+            var normalizedValue = value.Trim();
+            var valueBuilder = new StringBuilder();
+            var charArray = normalizedValue.ToCharArray();
+            var charArrayLength = charArray.Length;
+            for (int i = 0; i < charArrayLength; i++)
+            {
+                if (SlugifyCharmap.Map.ContainsKey(charArray[i]))
+                {
+                    valueBuilder.Append(SlugifyCharmap.Map[charArray[i]]);
+                }
+                else if (charArray[i] == replacement)
+                {
+                    valueBuilder.Append(" ");
+                }
+                else
+                {
+                    valueBuilder.Append(charArray[i]);
+                }
+            }
+
+            var builtString = ClearMultipleIntervals(valueBuilder.ToString());
+            builtString = Regex.Replace(builtString, "[^\\w\\s$*_+~.'\"!\\-:@]+", string.Empty);
+            builtString = builtString.Replace(" ", replacement.ToString());
+
+            return builtString.Trim().ToLowerInvariant();
         }
     }
 }

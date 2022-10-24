@@ -70,6 +70,7 @@
 - [StringFunctions](#T-Essentials-Functions-StringFunctions 'Essentials.Functions.StringFunctions')
   - [ClearMultipleIntervals(value)](#M-Essentials-Functions-StringFunctions-ClearMultipleIntervals-System-String- 'Essentials.Functions.StringFunctions.ClearMultipleIntervals(System.String)')
   - [ConvertToKey(stringValue)](#M-Essentials-Functions-StringFunctions-ConvertToKey-System-String- 'Essentials.Functions.StringFunctions.ConvertToKey(System.String)')
+  - [Slugify(value)](#M-Essentials-Functions-StringFunctions-Slugify-System-String- 'Essentials.Functions.StringFunctions.Slugify(System.String)')
   - [SplitStringByCapitalLetters(stringValue)](#M-Essentials-Functions-StringFunctions-SplitStringByCapitalLetters-System-String- 'Essentials.Functions.StringFunctions.SplitStringByCapitalLetters(System.String)')
 - [TypeExtensions](#T-Essentials-Extensions-TypeExtensions 'Essentials.Extensions.TypeExtensions')
   - [GetAttribute\`\`1(type,inherit)](#M-Essentials-Extensions-TypeExtensions-GetAttribute``1-System-Type,System-Boolean- 'Essentials.Extensions.TypeExtensions.GetAttribute``1(System.Type,System.Boolean)')
@@ -1074,6 +1075,24 @@ Convert pascal case word into a key format word (upper and snake case).
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | stringValue | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+<a name='M-Essentials-Functions-StringFunctions-Slugify-System-String-'></a>
+### Slugify(value) `method`
+
+##### Summary
+
+Build slug from the specified string.
+Inspired by https://github.com/simov/slugify .
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
 
 <a name='M-Essentials-Functions-StringFunctions-SplitStringByCapitalLetters-System-String-'></a>
 ### SplitStringByCapitalLetters(stringValue) `method`

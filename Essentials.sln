@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFiles", "SolutionFi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Essentials.Tests", "tests\Essentials.Tests\Essentials.Tests.csproj", "{FA027014-6331-4CC6-9EE5-9936E58885A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Essentials.Helpers", "src\Essentials.Helpers\Essentials.Helpers.csproj", "{03A5B9E2-0247-4104-8CD2-026DA0E79EFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,5 +28,9 @@ Global
 		{FA027014-6331-4CC6-9EE5-9936E58885A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA027014-6331-4CC6-9EE5-9936E58885A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA027014-6331-4CC6-9EE5-9936E58885A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03A5B9E2-0247-4104-8CD2-026DA0E79EFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03A5B9E2-0247-4104-8CD2-026DA0E79EFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03A5B9E2-0247-4104-8CD2-026DA0E79EFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03A5B9E2-0247-4104-8CD2-026DA0E79EFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
