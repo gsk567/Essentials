@@ -12,12 +12,14 @@ namespace Essentials.Functions
         /// Generate MD5 hash from string.
         /// </summary>
         /// <param name="input"></param>
+        /// <param name="algorithm"></param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public static string MD5Hash(string input)
+        public static string HashString(string input, HashAlgorithm algorithm, Encoding encoding = null)
         {
-            var md5 = MD5.Create();
-            var inputBytes = Encoding.ASCII.GetBytes(input);
-            var hash = md5.ComputeHash(inputBytes);
+            var targetEncoding = encoding ?? Encoding.UTF8;
+            var inputBytes = targetEncoding.GetBytes(input);
+            var hash = algorithm.ComputeHash(inputBytes);
             var stringBuilder = new StringBuilder();
             foreach (var hashByte in hash)
             {
