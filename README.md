@@ -4,7 +4,7 @@
 ## Contents
 
 - [CryptoFunctions](#T-Essentials-Functions-CryptoFunctions 'Essentials.Functions.CryptoFunctions')
-  - [MD5Hash(input)](#M-Essentials-Functions-CryptoFunctions-MD5Hash-System-String- 'Essentials.Functions.CryptoFunctions.MD5Hash(System.String)')
+  - [HashString(input,algorithm,encoding)](#M-Essentials-Functions-CryptoFunctions-HashString-System-String,System-Security-Cryptography-HashAlgorithm,System-Text-Encoding- 'Essentials.Functions.CryptoFunctions.HashString(System.String,System.Security.Cryptography.HashAlgorithm,System.Text.Encoding)')
 - [ExpressionFunctions](#T-Essentials-Functions-ExpressionFunctions 'Essentials.Functions.ExpressionFunctions')
   - [BuildExpressionForProperty\`\`1(propertyName)](#M-Essentials-Functions-ExpressionFunctions-BuildExpressionForProperty``1-System-String- 'Essentials.Functions.ExpressionFunctions.BuildExpressionForProperty``1(System.String)')
   - [CombineByAndAlsoCondition\`\`1(left,right)](#M-Essentials-Functions-ExpressionFunctions-CombineByAndAlsoCondition``1-System-Linq-Expressions-Expression{System-Func{``0,System-Boolean}},System-Linq-Expressions-Expression{System-Func{``0,System-Boolean}}- 'Essentials.Functions.ExpressionFunctions.CombineByAndAlsoCondition``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})')
@@ -72,6 +72,7 @@
   - [ConvertToKey(stringValue)](#M-Essentials-Functions-StringFunctions-ConvertToKey-System-String- 'Essentials.Functions.StringFunctions.ConvertToKey(System.String)')
   - [Slugify(value)](#M-Essentials-Functions-StringFunctions-Slugify-System-String- 'Essentials.Functions.StringFunctions.Slugify(System.String)')
   - [SplitStringByCapitalLetters(stringValue)](#M-Essentials-Functions-StringFunctions-SplitStringByCapitalLetters-System-String- 'Essentials.Functions.StringFunctions.SplitStringByCapitalLetters(System.String)')
+  - [StripTags(source)](#M-Essentials-Functions-StringFunctions-StripTags-System-String- 'Essentials.Functions.StringFunctions.StripTags(System.String)')
 - [TypeExtensions](#T-Essentials-Extensions-TypeExtensions 'Essentials.Extensions.TypeExtensions')
   - [GetAttribute\`\`1(type,inherit)](#M-Essentials-Extensions-TypeExtensions-GetAttribute``1-System-Type,System-Boolean- 'Essentials.Extensions.TypeExtensions.GetAttribute``1(System.Type,System.Boolean)')
   - [GetDefaultValue(type)](#M-Essentials-Extensions-TypeExtensions-GetDefaultValue-System-Type- 'Essentials.Extensions.TypeExtensions.GetDefaultValue(System.Type)')
@@ -110,8 +111,8 @@ Essentials.Functions
 
 Essentials cryptography functions.
 
-<a name='M-Essentials-Functions-CryptoFunctions-MD5Hash-System-String-'></a>
-### MD5Hash(input) `method`
+<a name='M-Essentials-Functions-CryptoFunctions-HashString-System-String,System-Security-Cryptography-HashAlgorithm,System-Text-Encoding-'></a>
+### HashString(input,algorithm,encoding) `method`
 
 ##### Summary
 
@@ -126,6 +127,8 @@ Generate MD5 hash from string.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | input | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| algorithm | [System.Security.Cryptography.HashAlgorithm](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Security.Cryptography.HashAlgorithm 'System.Security.Cryptography.HashAlgorithm') |  |
+| encoding | [System.Text.Encoding](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.Encoding 'System.Text.Encoding') |  |
 
 <a name='T-Essentials-Functions-ExpressionFunctions'></a>
 ## ExpressionFunctions `type`
@@ -1110,6 +1113,23 @@ Splits pascal case string to separate words.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | stringValue | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+<a name='M-Essentials-Functions-StringFunctions-StripTags-System-String-'></a>
+### StripTags(source) `method`
+
+##### Summary
+
+Strip HTML and XML tags via regex replacement.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| source | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
 
 <a name='T-Essentials-Extensions-TypeExtensions'></a>
 ## TypeExtensions `type`

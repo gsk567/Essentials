@@ -57,7 +57,13 @@ namespace Essentials.Functions
                 return string.Empty;
             }
 
-            var wordsElements = stringValue.Split('_');
+            var valueChars = stringValue
+                .ToCharArray()
+                .Where(x => char.IsLetterOrDigit(x) || x == '_')
+                .ToArray();
+
+            var normalizedValue = new string(valueChars);
+            var wordsElements = normalizedValue.Split('_');
             var resultKeysComponents = new List<string>();
             foreach (var wordsElement in wordsElements)
             {
@@ -160,6 +166,17 @@ namespace Essentials.Functions
             builtString = builtString.Replace(" ", replacement.ToString());
 
             return builtString.Trim().ToLowerInvariant();
+        }
+
+        /// <summary>
+        /// Strip HTML and XML tags via regex replacement.
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public static string StripTags(string source)
+        {
+            return string.IsNullOrWhiteSpace(source) ?
+                string.Empty : Regex.Replace(source, "<.*?>", string.Empty);
         }
     }
 }

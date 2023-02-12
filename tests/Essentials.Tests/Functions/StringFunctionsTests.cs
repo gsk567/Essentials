@@ -31,6 +31,8 @@ namespace Essentials.Tests.Functions
         [InlineData("UIComponent", "UI_COMPONENT")]
         [InlineData("POWER", "POWER")]
         [InlineData("Hello World", "HELLO_WORLD")]
+        [InlineData("Hello World.", "HELLO_WORLD")]
+        [InlineData("Hello World!@#$%%^&||&*", "HELLO_WORLD")]
         [InlineData("Hello        World", "HELLO_WORLD")]
         [InlineData("Hello_World", "HELLO_WORLD")]
         [InlineData("Hello_Big Big_World", "HELLO_BIG_BIG_WORLD")]
