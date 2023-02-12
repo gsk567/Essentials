@@ -11,6 +11,17 @@ namespace Essentials.Functions
     /// </summary>
     public static class StringFunctions
     {
+        private static readonly IEnumerable<char> SupportedSeparationSymbols = new char[]
+        {
+            ' ',
+            '_',
+            '-',
+            '.',
+            ':',
+            ',',
+            '&',
+        };
+
         /// <summary>
         /// Splits pascal case string to separate words.
         /// </summary>
@@ -59,10 +70,15 @@ namespace Essentials.Functions
 
             var valueChars = stringValue
                 .ToCharArray()
-                .Where(x => char.IsLetterOrDigit(x) || x == '_')
+                .Where(x => char.IsLetterOrDigit(x) || SupportedSeparationSymbols.Contains(x))
                 .ToArray();
 
             var normalizedValue = new string(valueChars);
+            foreach (var separationSymbol in SupportedSeparationSymbols)
+            {
+                normalizedValue = normalizedValue.Replace(separationSymbol, '_');
+            }
+
             var wordsElements = normalizedValue.Split('_');
             var resultKeysComponents = new List<string>();
             foreach (var wordsElement in wordsElements)
